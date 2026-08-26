@@ -10,14 +10,18 @@
   <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#1f2933">
 </head>
-  <script>
-  if ("serviceWorker" in navigator) {
-    window.addEventListener("load", () => {
-      navigator.serviceWorker.register("sw.js").catch(console.error);
-    });
-  }
-</script>
 <body>
+   … dein ganzer Inhalt …
+
+   <script>
+     if ("serviceWorker" in navigator) {
+       window.addEventListener("load", () => {
+         navigator.serviceWorker.register("sw.js").catch(console.error);
+       });
+     }
+   </script>
+</body>
+</html>
 
 <!-- ============ PIN LOCK SCREEN ============ -->
 <div id="lockScreen" class="lock-screen">
