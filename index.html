@@ -3,40 +3,50 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kontobuch — Steuer &amp; Buchhaltung</title>
+<title>Kontobuch — Steuer & Buchhaltung</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="css/style.css">
-  <link rel="manifest" href="manifest.json">
+<link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#1f2933">
 </head>
-<body>
-   … dein ganzer Inhalt …
 
-   <script>
-     if ("serviceWorker" in navigator) {
-       window.addEventListener("load", () => {
-         navigator.serviceWorker.register("sw.js").catch(console.error);
-       });
-     }
-   </script>
-</body>
-</html>
+<body>
+
+<!-- ============ MOBILE HEADER ============ -->
+<div class="mobile-header">
+  <div id="menuToggle" class="menu-toggle">☰</div>
+  <div class="mobile-title">Kontobuch</div>
+</div>
 
 <!-- ============ PIN LOCK SCREEN ============ -->
 <div id="lockScreen" class="lock-screen">
   <div class="lock-card">
     <div class="lock-mark">KB</div>
     <h1>Kontobuch</h1>
-    <p class="lock-sub" id="lockSubtitle">Persönliches Buchhaltungsbuch — lokal &amp; verschlüsselt gesperrt.</p>
-    <div id="lockSetupNotice" class="lock-notice hidden">Noch keine PIN vergeben. Lege jetzt eine 4–8-stellige PIN fest.</div>
-    <input type="password" id="pinInput" inputmode="numeric" maxlength="8" placeholder="PIN eingeben" class="pin-input" autocomplete="off">
-    <div id="pinConfirmWrap" class="hidden">
-      <input type="password" id="pinConfirmInput" inputmode="numeric" maxlength="8" placeholder="PIN bestätigen" class="pin-input" autocomplete="off">
+    <p class="lock-sub" id="lockSubtitle">Persönliches Buchhaltungsbuch — lokal & verschlüsselt gesperrt.</p>
+
+    <div id="lockSetupNotice" class="lock-notice hidden">
+      Noch keine PIN vergeben. Lege jetzt eine 4–8-stellige PIN fest.
     </div>
+
+    <input type="password" id="pinInput" inputmode="numeric" maxlength="8"
+           placeholder="PIN eingeben" class="pin-input" autocomplete="off">
+
+    <div id="pinConfirmWrap" class="hidden">
+      <input type="password" id="pinConfirmInput" inputmode="numeric" maxlength="8"
+             placeholder="PIN bestätigen" class="pin-input" autocomplete="off">
+    </div>
+
     <button id="pinSubmit" class="btn btn-primary btn-block">Entsperren</button>
     <div id="lockError" class="lock-error hidden"></div>
-    <p class="lock-foot">Die PIN schützt nur den Bildschirmzugriff in diesem Browser. Sie ersetzt keine Festplattenverschlüsselung — aktiviere zusätzlich die Verschlüsselung deines Geräts.</p>
+
+    <p class="lock-foot">
+      Die PIN schützt nur den Bildschirmzugriff in diesem Browser.
+      Sie ersetzt keine Festplattenverschlüsselung — aktiviere zusätzlich die Verschlüsselung deines Geräts.
+    </p>
   </div>
 </div>
 
@@ -48,6 +58,7 @@
       <span class="brand-mark">KB</span>
       <span class="brand-name">Kontobuch</span>
     </div>
+
     <nav class="nav" id="mainNav">
       <button class="nav-item active" data-view="dashboard"><span class="nav-ic">◆</span>Übersicht</button>
       <button class="nav-item" data-view="rechnungen"><span class="nav-ic">▤</span>Rechnungen</button>
@@ -59,9 +70,10 @@
       <button class="nav-item" data-view="fristen"><span class="nav-ic">◷</span>Fristen</button>
       <button class="nav-item" data-view="einstellungen"><span class="nav-ic">⚙</span>Einstellungen</button>
     </nav>
+
     <div class="sidebar-foot">
       <button id="lockBtn" class="lock-toggle">Sperren</button>
-      <div class="gobd-note">GoBD-Hinweis: Belege &amp; Rechnungen sind änderungsprotokolliert, nicht löschbar.</div>
+      <div class="gobd-note">GoBD-Hinweis: Belege & Rechnungen sind änderungsprotokolliert, nicht löschbar.</div>
     </div>
   </aside>
 
@@ -72,7 +84,8 @@
         <span id="periodBadge" class="badge-mono"></span>
       </div>
     </header>
-    <div class="view-body" id="viewBody"><!-- rendered by app.js --></div>
+
+    <div class="view-body" id="viewBody"></div>
   </main>
 </div>
 
@@ -80,10 +93,11 @@
 <div id="modalRoot"></div>
 <div id="toastRoot" class="toast-root"></div>
 
-<!-- Libraries (loaded from CDN — internet connection required on first use) -->
+<!-- Libraries -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
 
+<!-- App Scripts -->
 <script src="js/db.js"></script>
 <script src="js/util.js"></script>
 <script src="js/security.js"></script>
@@ -97,7 +111,4 @@
 <script src="js/ustva.js"></script>
 <script src="js/reminders.js"></script>
 <script src="js/exportfiles.js"></script>
-<script src="js/app.js"></script>
-</body>
-</html>
- 
+<script src="js/app.js">
