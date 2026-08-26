@@ -91,3 +91,50 @@
 <!-- ============ MODAL ROOT ============ -->
 <div id="modalRoot"></div>
 <div id="toastRoot" class="toast-root"></div>
+<!-- ============ Libraries ============ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+
+<!-- ============ App Scripts ============ -->
+<script src="js/db.js"></script>
+<script src="js/util.js"></script>
+<script src="js/security.js"></script>
+<script src="js/settings.js"></script>
+<script src="js/customers.js"></script>
+<script src="js/invoices.js"></script>
+<script src="js/income.js"></script>
+<script src="js/expenses.js"></script>
+<script src="js/ocr.js"></script>
+<script src="js/euer.js"></script>
+<script src="js/ustva.js"></script>
+<script src="js/reminders.js"></script>
+<script src="js/exportfiles.js"></script>
+<script src="js/app.js"></script>
+
+<!-- ============ MOBILE MENU SCRIPT ============ -->
+<script>
+document.getElementById("menuToggle").addEventListener("click", () => {
+  document.querySelector(".sidebar").classList.toggle("open");
+});
+
+document.addEventListener("click", (e) => {
+  const sidebar = document.querySelector(".sidebar");
+  const toggle = document.getElementById("menuToggle");
+
+  if (!sidebar.contains(e.target) && !toggle.contains(e.target)) {
+    sidebar.classList.remove("open");
+  }
+});
+</script>
+
+<!-- ============ SERVICE WORKER ============ -->
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("sw.js").catch(console.error);
+  });
+}
+</script>
+
+</body>
+</html>
