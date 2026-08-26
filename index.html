@@ -49,3 +49,45 @@
     </p>
   </div>
 </div>
+<!-- ============ APP SHELL ============ -->
+<div id="appShell" class="app-shell hidden">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <span class="brand-mark">KB</span>
+      <span class="brand-name">Kontobuch</span>
+    </div>
+
+    <nav class="nav" id="mainNav">
+      <button class="nav-item active" data-view="dashboard"><span class="nav-ic">◆</span>Übersicht</button>
+      <button class="nav-item" data-view="rechnungen"><span class="nav-ic">▤</span>Rechnungen</button>
+      <button class="nav-item" data-view="kunden"><span class="nav-ic">◍</span>Kunden</button>
+      <button class="nav-item" data-view="einnahmen"><span class="nav-ic">↓</span>Einnahmen</button>
+      <button class="nav-item" data-view="ausgaben"><span class="nav-ic">↑</span>Ausgaben</button>
+      <button class="nav-item" data-view="euer"><span class="nav-ic">Σ</span>EÜR</button>
+      <button class="nav-item" data-view="ustva"><span class="nav-ic">%</span>USt-VA</button>
+      <button class="nav-item" data-view="fristen"><span class="nav-ic">◷</span>Fristen</button>
+      <button class="nav-item" data-view="einstellungen"><span class="nav-ic">⚙</span>Einstellungen</button>
+    </nav>
+
+    <div class="sidebar-foot">
+      <button id="lockBtn" class="lock-toggle">Sperren</button>
+      <div class="gobd-note">GoBD-Hinweis: Belege & Rechnungen sind änderungsprotokolliert, nicht löschbar.</div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <h2 id="viewTitle">Übersicht</h2>
+      <div class="topbar-right">
+        <span id="periodBadge" class="badge-mono"></span>
+      </div>
+    </header>
+
+    <div class="view-body" id="viewBody"></div>
+  </main>
+</div>
+
+<!-- ============ MODAL ROOT ============ -->
+<div id="modalRoot"></div>
+<div id="toastRoot" class="toast-root"></div>
